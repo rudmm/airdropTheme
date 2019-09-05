@@ -1,9 +1,24 @@
 <?php
 add_action( 'wp_enqueue_scripts', 'add_theme_styles_script' );
 add_action('after_setup_theme', 'customLogo');
+add_action( 'widgets_init', 'register_my_widgets' );
+add_filter( 'excerpt_length', function(){
+	return 50;
+} );
+add_filter('excerpt_more', function($more) {
+	return '...';
+});
+
+function register_my_widgets(){
+	register_sidebar( array(
+		'name'          => 'top' )
+    );
+}
 
 function customLogo(){
     add_theme_support( 'custom-logo');
+    add_theme_support( 'post-thumbnails', array( 'post') ); 
+    add_image_size('post_image', 732, 330, true); 
 }
 
 function add_theme_styles_script(){

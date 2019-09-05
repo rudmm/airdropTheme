@@ -1,55 +1,29 @@
-<?php get_header(); ?>
+<?php get_header();?>
         <!-- Mobile filter menu and search -->
 
         <main>
              <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <p class="blog">Blog</p>
+                        <p class="blog"><?php bloginfo('name');?></p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-8 col-sm-12">
-                        <div class="block">
-                        <a href="airdrop.html"><img src="images/img1.png" class="img-fluid"></a>
+                    <?php if (have_posts()): while (have_posts()): the_post();?>
+                    <div class="block">
+                        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('post_image'); ?></a>
                         <p class="list">
-                            <a href="category/index.html"><span class="categories">category</span></a>
+                        <?php the_category(' ', '',''); ?>
                          </p>
-                         <h1>At eos modus decore placerat</h1>
-                         <p>Lorem ipsum dolor sit amet, ad assum vitae appetere quo, sint omnis habeo et sed, decore interpretaris at cum. Te vim delectus volutpat similique, maluisset comprehensam nam te. Eu fuisset honestatis mea, habeo aeque aliquando te duo. Est te rebum invidunt reprehendunt, labores atomorum suavitate eam noaliquando te duo nvidunt reprehendunt</p>
-                         <span class="dates">may 20, 2019</span>
-                         <a href="airdrop.html" class="button">Read More</a>
+                         <h1><?php the_title(); ?></h1>
+                         <?php the_excerpt(); ?>
+                         <span class="dates"><?php the_time('F j, Y'); ?></span>
+                         <a href="<?php the_permalink(); ?>" class="button">Read More</a>
                          </div>
-                           <div class="block">
-                        <a href="airdrop.html"><img src="images/img2.png" class="img-fluid"></a>
-                        <p class="list">
-                            <a href="category/index.html"><span class="categories">category</span></a>
-                         </p>
-                         <h1>At eos modus decore placerat</h1>
-                         <p>Lorem ipsum dolor sit amet, ad assum vitae appetere quo, sint omnis habeo et sed, decore interpretaris at cum. Te vim delectus volutpat similique, maluisset comprehensam nam te. Eu fuisset honestatis mea, habeo aeque aliquando te duo. Est te rebum invidunt reprehendunt, labores atomorum suavitate eam noaliquando te duo nvidunt reprehendunt</p>
-                         <span class="dates">may 20, 2019</span>
-                         <a href="airdrop.html" class="button">Read More</a>
-                         </div>
-                           <div class="block">
-                        <a href="airdrop.html"><img src="images/img3.png" class="img-fluid"></a>
-                        <p class="list">
-                            <a href="category/index.html"><span class="categories">category</span></a>
-                         </p>
-                         <h1>At eos modus decore placerat</h1>
-                         <p>Lorem ipsum dolor sit amet, ad assum vitae appetere quo, sint omnis habeo et sed, decore interpretaris at cum. Te vim delectus volutpat similique, maluisset comprehensam nam te. Eu fuisset honestatis mea, habeo aeque aliquando te duo. Est te rebum invidunt reprehendunt, labores atomorum suavitate eam noaliquando te duo nvidunt reprehendunt</p>
-                         <span class="dates">may 20, 2019</span>
-                         <a href="airdrop.html" class="button">Read More</a>
-                         </div>
-                           <div class="block">
-                        <a href="airdrop.html"><img src="images/img4.png" class="img-fluid"></a>
-                        <p class="list">
-                            <a href="category/index.html"><span class="categories">category</span></a>
-                         </p>
-                         <h1>At eos modus decore placerat</h1>
-                         <p>Lorem ipsum dolor sit amet, ad assum vitae appetere quo, sint omnis habeo et sed, decore interpretaris at cum. Te vim delectus volutpat similique, maluisset comprehensam nam te. Eu fuisset honestatis mea, habeo aeque aliquando te duo. Est te rebum invidunt reprehendunt, labores atomorum suavitate eam noaliquando te duo nvidunt reprehendunt</p>
-                         <span class="dates">may 20, 2019</span>
-                         <a href="airdrop.html" class="button">Read More</a>
-                         </div>
+		            <?php endwhile;?>
+                    <?php endif;?>
+                       
 
                     </div>
                     <div class="col-md-4 dnone">
@@ -124,4 +98,4 @@
 
         </main>
         <!-- Footer -->
-<?php get_footer(); ?>
+<?php get_footer();?>
