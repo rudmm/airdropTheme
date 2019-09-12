@@ -5,7 +5,7 @@
              <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <p class="blog"><?php bloginfo('name');?></p>
+                        <div class="blog"><?php single_cat_title( $prefix = '', $display = true )?></div>
                     </div>
                 </div>
                 <div class="row">

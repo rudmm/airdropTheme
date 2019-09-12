@@ -2,29 +2,57 @@ body{
     background: #f8f8f8;
     font-family: 'Montserrat', sans-serif;     
 }
-
 .widget_search{
     display: inherit;
 }
-
+header .widget{
+    margin-bottom: 0;
+}
+.widget_recent_entries .widgettitle{
+    display: none;
+}
+.error404{
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* Left column of filter section design */
 main .blog{
   font-size: 18px;
   font-family: "Montserrat";
   color: #2952ff;
-  width: 39px;
   height: 18px;
   z-index: 357;
   margin-top: 16px;
+  margin-bottom: 16px;
+}
+main .blog .post-categories{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+main .blog .post-categories li{
+    display: inline-block;
+}
+main .blog .post-categories li a{
+    text-transform: capitalize;
+    color: inherit;
 }
 main .block{
     background: #fff;
     margin-bottom: 20px;
+    position: relative;
+    top: 10px;
+    padding-bottom: 30px;
+    background-clip: padding-box;
 }
 main .row a{
     text-decoration: none;
 }
-.list  a{
+.list  a, .widget_categories .cat-item a{
   font-size: 10px;
   font-family: "Audiowide";
   color: #fff;
@@ -34,7 +62,12 @@ main .row a{
   padding: 3px;
 }
 main .block p.list{
-    margin-top: -15px;
+    position: relative;
+    top: -15px;
+}
+main .block a img{
+    max-width: 100%;
+    height: auto;
 }
 main .block h1{
   font-size: 18px;
@@ -60,8 +93,9 @@ main .block .button{
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
-  position: relative;
-  bottom: 20px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 main .block .button:hover{
     box-shadow:0px 5px 18px 7px rgba(199,201,201, 0.42);
@@ -71,11 +105,10 @@ main .block span.dates{
   font-family: "Montserrat";
   color: rgb( 205, 205, 205 );
   text-transform: uppercase;
-  width: 65px;
   height: 10px;
   margin-left: 30px;
-  position: relative;
-  bottom: 17px;
+  position: absolute;
+  bottom: 10px;
 }
 main .place{
     background: #fff;
@@ -84,6 +117,8 @@ main .place{
 }
 main .place img{
     border-radius: 3px;
+    max-width: 100%;
+    height: auto;
 }
 main .place p {
   font-size: 18px;
@@ -96,11 +131,24 @@ main .place p {
 main .place .row{
     margin-bottom: 30px;
 }
-main .cat h3{
+.widget{
+    display: block;
+}
+.widget, .place{
+    margin-bottom: 50px;
+}
+main .widget_categories .widgettitle{
   font-size: 18px;
   font-family: "Montserrat";
   color: #2952ff;
-  margin-top: 50px;
+}
+main .widget_categories ul{
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+main .widget_categories .cat-item{
+    display: inline-block;
 }
 main .cat .cat-list span{
     white-space: nowrap;
@@ -148,7 +196,7 @@ main .first-section-wrapper .container .row .card-left .form-check-input, .modal
 main .pagination a{
     color: #000;
 }
-main a .categories:hover{
+main .list a:hover, .widget_categories .cat-item a:hover{
     opacity: 0.5;
 }
 .form-check-label{
@@ -380,14 +428,16 @@ main .second-section-wrapper .container .row p{
     margin-bottom: 20px;
     font-size:14px;
     font-weight:500;
+    margin-left: auto;
+    margin-right: auto;
 }
- .pagination .pages{
+ .pagination .nav-links{
     text-align:center;
 }
-.pagination .pages span{
+.pagination .nav-links *{
    padding: 10px 15px;
 }
-.pagination .pages .selected{
+.pagination .nav-links .current{
     background-color:#2952ff;
     color:white;     
 }

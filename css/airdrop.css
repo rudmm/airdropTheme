@@ -16,7 +16,11 @@ main span img{
     height:14px;
     margin-right:2px;
 }
-main  .categories{
+main .img-post img{
+    width: 100%;
+    height: auto;
+}
+main .categories a{
   font-size: 10px;
   font-family: "Audiowide";
   color: #fff;
@@ -24,6 +28,9 @@ main  .categories{
   text-transform: uppercase;
   text-align: right;
   padding: 3px;
+}
+main  .categories a{
+    text-decoration: none;
 }
 main .first{
     margin-top: 30px;
@@ -39,8 +46,6 @@ main .dates{
   font-family: "Montserrat";
   color: rgb( 205, 205, 205 );
   text-transform: uppercase;
-  width: 65px;
-  height: 10px;
   display: inline-block;
   margin-top: 20px;
 }
@@ -64,9 +69,29 @@ main .first h2{
   margin-top: 50px;
 }
 main .next{
-    margin-left: 20px;
-    margin-top: -15px;
-    margin-right: 20px;
+    width: 100%;
+    max-height: 100%;
+    padding: 0 20px;
+}
+main .block{
+    position: relative;
+}
+main .next .categories{
+    transform: translateY(-50%);
+    display: inline-block;
+
+}
+main .block .content{
+    margin-bottom: 60px;
+}
+main .block .content p{
+    margin-left: 0;
+}
+
+
+main .next span.dates{
+    width: auto;
+    margin-left: 0;
 }
 main .next h3{
   font-size: 18px;
@@ -86,13 +111,14 @@ main .next .button{
   color: #fff;
   width: 166px;
   height: 44px;
-  float: right;
   display: flex;
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
   text-decoration: none;
-  margin-right: -20px;
+  position: absolute;
+  right: 15px;
+  bottom: 0;
 }
 main .next .button:hover{
     
@@ -102,7 +128,7 @@ main .next .button:hover{
 main .first a {
   text-decoration: none;
 }
-main a .categories:hover{
+main .categories a:hover{
   
   opacity: .5;
 }
@@ -110,10 +136,15 @@ main a .categories:hover{
 main .block{
     margin-bottom: 20px;
     background: #fff;
+    background-clip: padding-box;
+}
+main .first .block{
     background-clip: content-box;
+    padding-bottom: 0;
 }
 main .next span.dates{
     margin-top: 10px;
+    margin-bottom: 40px;
 }
 .section{
     background-color:white;
